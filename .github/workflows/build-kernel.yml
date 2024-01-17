@@ -49,11 +49,7 @@ jobs:
           mkdir kernel
           paths=$(pwd)
           cd android-kernel/out/*/common/arch/arm64/boot/
-          if [[ -f Image.gz-dtb ]]; then
-            echo "压缩格式：Image.gz-dtb" && cd $paths && cp android-kernel/out/*/common/arch/arm64/boot/Image.gz-dtb kernel/
-          elif [[ -f Image-dtb ]]; then
-            echo "压缩格式：Image-dtb" && cd $paths && cp android-kernel/out/*/common/arch/arm64/boot/Image-dtb kernel/
-          elif [[ -f Image.gz ]]; then
+          if [[ -f Image.gz ]]; then
             echo "压缩格式：Image.gz" && cd $paths && cp android-kernel/out/*/common/arch/arm64/boot/Image.gz kernel/
           elif [[ -f Image ]]; then
             echo "压缩格式：Image" && cd $paths && cp android-kernel/out/*/common/arch/arm64/boot/Image kernel/
